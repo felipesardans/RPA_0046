@@ -1,0 +1,296 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="GenerarReporteSAP" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ucas="clr-namespace:UiPath.Core.Activities.SAP;assembly=UiPath.UiAutomation.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_strMailRecipient" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_transaction" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:GenerarReporteSAP.in_strMailRecipient>
+    <InArgument x:TypeArguments="x:String" />
+  </this:GenerarReporteSAP.in_strMailRecipient>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>654,2735</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>GenerarReporteSAP_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="74">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.Core.Activities.SAP</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Globalization</x:String>
+      <x:String>UiPath.Core.Activities.DateModifications</x:String>
+      <x:String>UiPath.Activities.System.Workflow.Business</x:String>
+      <x:String>UiPath.Testing.Activities.TestData</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>UiPath.Shared.ObjectLibrary</x:String>
+      <x:String>UiPath.CV.Activities</x:String>
+      <x:String>UiPath.CV.Activities.Interfaces</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.OCR.Activities</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Triggers</x:String>
+      <x:String>UiPath.Platform.Triggers</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Triggers</x:String>
+      <x:String>UiPath.Platform.Triggers.Scope</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="66">
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.Process</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="GenerarReporteSAP" sap:VirtualizedContainerService.HintSize="574,2670" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="bool_FileExiste" />
+      <Variable x:TypeArguments="x:Boolean" Name="bool_Seguridad" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="532,2578" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence sap:VirtualizedContainerService.HintSize="494,2164" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ucas:CallTransaction ContinueOnError="True" DisplayName="Call Transaction 'saplogon.exe SAP'" sap:VirtualizedContainerService.HintSize="452,159" sap2010:WorkflowViewState.IdRef="CallTransaction_1" Transaction="/n/n">
+            <ucas:CallTransaction.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e7406d6e-6d63-4882-92f7-53ff40be2c02" InformativeScreenshot="f847e1885e4b7594a0ca47e31a62b075" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='SAP Easy Access  -  Menu usuário p/ RPA Controladoria' /&gt;">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ucas:CallTransaction.Target>
+          </ucas:CallTransaction>
+          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: SAP Easy Access  -  Menu usuário p/ RPA Controladoria" sap:VirtualizedContainerService.HintSize="452,1873" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="cb6b17b1-723c-47e7-a369-fdd93588f3e5" Version="V2">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence sap:VirtualizedContainerService.HintSize="418,1583" sap2010:WorkflowViewState.IdRef="Sequence_125">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,1490" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:String" Name="str_Descripcion" />
+                      <Variable x:TypeArguments="x:String" Name="str_Selector" />
+                      <Variable x:TypeArguments="x:Boolean" Name="bool_Seguridad2" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ucas:CallTransaction ContinueOnError="True" DisplayName="Call Transaction 'saplogon.exe SAP'" sap:VirtualizedContainerService.HintSize="334,159" sap2010:WorkflowViewState.IdRef="CallTransaction_2" Transaction="[in_transaction]">
+                      <ucas:CallTransaction.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="e7406d6e-6d63-4882-92f7-53ff40be2c02" InformativeScreenshot="4629a5b5e4ccad3a178980ca3207e934">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ucas:CallTransaction.Target>
+                    </ucas:CallTransaction>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'saplogon.exe Exibição'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cb6b17b1-723c-47e7-a369-fdd93588f3e5" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="633, 146, 51, 31" DesignTimeScaleFactor="1" FriendlyName="'saplogon.exe Exibição'" Guid="83a7b72c-1b79-415a-9856-2e94cf1ee9d6" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADMAAAAfCAYAAABKz/VnAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF7SURBVFhH7ZixSgNBEIYtfQCxsIyFhc+QtxAFkWAVEdKk9BEkgi9gYaFBD6ONpRjEgGIpWCicBNQqh4gmrGIx5l8uzTC57MHtsSb7w9/tzczHzN2xM6WUonGxh3HVkwsTvr3T6s4lza3XaXpp36oL5WMq7TZ1TqkWycYwCAqI+Y2AgtYzRZ/fZEuvUY/qV6HONVs6pMeXSKyJ2xgGHUFwmxBcH90fWtg80bmlmriNYdAVdCRvISdGTqqJ2xgGc5xnVwbCyCG3VBN3KpisdPfUSRXPaRiodnavYwJslJyHgY6uQyMg52Dw/DAXt87jU7JwRqqJ23cmCw3eGRM5DeP816y6d6vPJLlQDuLT6YRnpZq4M4NZqTX16CRpVIxh8jBJ9jBMHqYvD5PkiYL5d/+Zsbmc4dp8etOOU+QnK9fm5e0LvVz4Ur9xGvtCrsVKI/uFBtY9M2sHGggdsr1qQkcAgpwP7Y5YE7cxDAwgdCivJSA6YgoCp4Jx24r+AA+JD2YmrHvBAAAAAElFTkSuQmCC" InformativeScreenshot="9590add9220902a820a0c584f3f07eeb.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Exibição de saldos da conta do Razão' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V2" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Ajuda para tela'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cb6b17b1-723c-47e7-a369-fdd93588f3e5" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable CvTextArgument="W" CvType="Text" DesignTimeRectangle="492, 485, 24, 24" DesignTimeScaleFactor="1" FriendlyName="'Eliminar completamente'" FullSelectorArgument="&lt;uia automationid='127' cls='Button' name='Eliminar completamente seleção' /&gt;" FuzzySelectorArgument="&lt;uia automationid='127' cls='Button' name='Eliminar completamente seleção' role='botón' check:fulltext='Eliminar completamente seleção' /&gt;" Guid="59611cdd-2680-4724-b951-33b84511451d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADnSURBVEhL7ZI9CgJBDIUtPYf38BaCN7C39Ax7BQtLsbHZ3sJGLC0FT+AhRt5g4I0/eVkYVGQ/CCyz2XyTbAbpw/TC6vTCgvX+koaTVRHH8/X+NoYrHM02TwIV+Mbjt0b6lQ5RIPKfkKNkQArHizYviwI5yFVI4bTZ5WJcEGfz5SE/24UQOFeEhM32VIyMhTZy5FQRojAXByzEogDO85BCvrkVNyE64zPkKjoJbXws5K6rCHlZbEFM+OqdQgq5i0chOjKhda/oJATvilYTAlsMj0gOCAlxexT0gqfgERLWpBdW59+FKd0A3/x+PzYwxpIAAAAASUVORK5CYII=" InformativeScreenshot="eedf0034fcf6d35958d5c62adbb2be7b.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Seleção múltipla para Nº conta' idx='*' /&gt;" SearchSteps="Selector, FuzzySelector, Image, CV" SelectionStrategy="UIA" Version="V2" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                              <uix:Target CvElementArea="526, 487, 20, 21" CvTextArea="530, 490, 10, 12" CvTextArgument="i" CvType="Icon" DesignTimeRectangle="524, 485, 24, 24" FriendlyName="'Ajuda para tela'" FullSelectorArgument="&lt;uia automationid='129' cls='Button' name='Ajuda para tela' /&gt;" FuzzySelectorArgument="&lt;uia automationid='129' cls='Button' name='Ajuda para tela' role='botón' check:fulltext='Ajuda para tela' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACDSURBVEhLY/hPZzBqIdXBqIVUB3gttK3c8p8jZAHJ+NSt11ATMAFeC5XSVv1fcfgulEccIKSHLAvDu/eDfYIN0MRCkDjIQlxyVLcQHxj6FiKnXGwG08SHIPFRC3GBwW8hzDIYxiZPVQsJAYoshBVhpGJ8AK+FtACjFlIdjFpIZfD/PwAVZphAkmdGVQAAAABJRU5ErkJggg==" SearchSteps="Selector, FuzzySelector, Image, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Cancelar'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cb6b17b1-723c-47e7-a369-fdd93588f3e5" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="719, 485, 24, 24" DesignTimeScaleFactor="1" FriendlyName="'Upload do clipboard'" FullSelectorArgument="&lt;uia automationid='135' cls='Button' name='Upload do clipboard' /&gt;" FuzzySelectorArgument="&lt;uia automationid='135' cls='Button' name='Upload do clipboard' role='botón' check:fulltext='Upload do clipboard' /&gt;" Guid="7b59a967-d078-4bf1-961c-4836153f09c3" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACjSURBVEhLY/hPZzBqIdXBqIUoYMXhu/85QhaAcff6S1BR0gDRFoZ37wdbdOrWazAfxLat3AJmkwLwWqiUtgruI2TLYABZDoSJAXgtRLYE5kNkjOxDZLX4ANEWUgsMfgvR4xUbxgdIthDdcGwYX6iMWojTQmwlDXrhgA0MbR+CCoLhYyE+TLaFMBcjG4Quho5BBQM+gNdCWoBRC6kOhruF//8DACzQSlJefRZjAAAAAElFTkSuQmCC" InformativeScreenshot="f3e2b57ac66d88cab2b74c3d3c2ec0cb.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Seleção múltipla para Nº conta' idx='*' /&gt;" SearchSteps="Selector, FuzzySelector, Image" SelectionStrategy="UIA" Version="V2" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                              <uix:Target CvType="CloseButton" DesignTimeRectangle="751, 485, 24, 24" FriendlyName="'Cancelar'" FullSelectorArgument="&lt;uia automationid='123' cls='Button' name='Cancelar' /&gt;" FuzzySelectorArgument="&lt;uia automationid='123' cls='Button' name='Cancelar' role='botón' check:fulltext='Cancelar' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC+SURBVEhL7dS7DYMwFIVhb8ImTMIiLMIgtJRp0yClS0lHmwFMDrIjy8L34VxR+ZdcBF34eFhx/uYaaF4DzSPBz7r6xblzcT267pzb5zkcuY680nscfyCFRgzrNQzh6HXsrW/TRKIphhvk4t/VtxKqxZAIRDlagyExiHJUiyEViNInw9KmOiPHalDxdP7NuN1bSjRZ2iA1KDvF7UYtSk4AoLBYiv79T4MLUFgM6LPvw69yshdvWAPNa6B5N4PeHw4YihXH6M/MAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, Image, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Verificar entradas'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cb6b17b1-723c-47e7-a369-fdd93588f3e5" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable CvType="Icon" DesignTimeRectangle="332, 485, 24, 24" DesignTimeScaleFactor="1" FriendlyName="'Transferir'" FullSelectorArgument="&lt;uia automationid='119' cls='Button' name='Transferir' /&gt;" FuzzySelectorArgument="&lt;uia automationid='119' cls='Button' name='Transferir' role='botón' check:fulltext='Transferir' /&gt;" Guid="3beca73e-9fbe-48db-a987-c2b76a52ff6b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD0SURBVEhL7ZS7DcIwEEApmYM92AKJDegpmSErUFAiGpr0FDSIkhKJCRjC6KGccCLf+awECpQnuUis+N3PmYQfMwoHZxS2WFanMF3sWmu+qZtdHy5hdby9D19vL82bD7JHMB6yQiSz1aF50iFTT7amcH9+uGQCwlQVYkwhMqQx1/vTzITyWqhCRKmDc1nTSytLVchHqQ9Ly9xFFRIpE9jla0LKqQnlDsar97XQStqX4qHJkQtSFULqWlhIua1ATSE9LBmQnAxMITAMmpTDkcjkeoLLCoG+cHCqPwTEHsuDSyhIRvzeYnjv7XWRcAhG4eD8uzCEF5Q4wdoPT+6JAAAAAElFTkSuQmCC" InformativeScreenshot="8200e54198ead30f0ab65ca87cf8aded.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Seleção múltipla para Nº conta' idx='*' /&gt;" SearchSteps="Selector, FuzzySelector, Image, CV" SelectionStrategy="UIA" Version="V2" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                              <uix:Target CvType="Icon" DesignTimeRectangle="364, 485, 24, 24" FriendlyName="'Verificar entradas'" FullSelectorArgument="&lt;uia automationid='111' cls='Button' name='Verificar entradas' /&gt;" FuzzySelectorArgument="&lt;uia automationid='111' cls='Button' name='Verificar entradas' role='botón' check:fulltext='Verificar entradas' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADLSURBVEhLY/hPZzBqIdXBqIVUB1SzsP/w0v8CdXb/V1/cDRXBDqhi4enHV8GWgbDLrAyoKHZAFQs1e4LgFhICFFtYtnUC3DJCwQkCFFkIsgBmWezyGqgofkDQQnwuh1kGClJiAV4LQQkAZii6pSAf4ZLDBwj6EDlBwAyGZQEQBsUhKYCoOIQZDrMAxiYlKGGAKAuR8xkyBomTCoiyEATQLSU1KGGAaAtBAJYNCJUm+ABJFoIAOcGIDEi2kFIwaiHVwaiFVAd0tvD/fwD2ospHAK4QeAAAAABJRU5ErkJggg==" SearchSteps="Selector, FuzzySelector, Image, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'saplogon.exe Exibição'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,217" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="cb6b17b1-723c-47e7-a369-fdd93588f3e5" Text="[DateTime.Now.Year.ToString]" Version="V3">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="283, 200, 57, 33" DesignTimeScaleFactor="1" FriendlyName="'saplogon.exe Exibição'" Guid="35545de5-e89c-4ed0-935d-769a3e9c115d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADkAAAAhCAYAAABjnQNzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC8SURBVFhH7dlBCsIwEEbhZucBvZRLt648hujBsozMIiDDsxFTmmn7D3wgEtt5dGennHOZc7neSsSxvWhfMj2erzLHLhYVBZHmk9wDjEwpITq7NtrL0NnqayR9H1V35Ol8D4v2JT9FRhxFOseN/LSFyBZFGkUOHEU6ijSKHDiKdBRpFDlwFOko0ihy4HRH6p+BIKNIB18T2I/qZ7tYVDWi+0luwd+RhM6ujfYydLbCyL1pRtIrs6XQ/ZaXyxsgWii4SLuqzwAAAABJRU5ErkJggg==" InformativeScreenshot="143af01eea56be13ca29452813bf8569.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Exibição de saldos da conta do Razão' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V2" Visibility="Interactive" />
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Gravar como variante...'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cb6b17b1-723c-47e7-a369-fdd93588f3e5" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="272, 99, 26, 26" DesignTimeScaleFactor="1" FriendlyName="'Executar'" FullSelectorArgument="&lt;uia automationid='119' cls='Button' name='Executar' /&gt;" FuzzySelectorArgument="&lt;uia automationid='119' cls='Button' name='Executar' role='botón' check:fulltext='Executar' /&gt;" Guid="6bee7e8f-8582-4cbf-bd03-3ac1bb5ccd29" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD2SURBVEhL7ZS7DcIwEEApmYM92AKJDegpmSErUFAiGhp6ChpESYnEBAxh9FBOmMj2nZExjZ/kIraSdz9n5P5EE1ejiauRLZ53RzeebT7WdHXoT+2Yxd3++pIs1+d+542cEZQVkxjZZLHrn+KQuTV7Vbw93U1SAXGoKkNUMVLkPpfbI5kZZddIihGGBFoV6LWWdVLMy6EP5JY/RFJM5EzskJ+LKXNMLHfYX8WuU6zUJfhquDQswSbFELpOKaQNWsCqmB7nDJJFCqoYGJqYHAkymXRrkCYx0DcEof4RGGcsK2axIBny2/RhP2cWssWlaOJqNHElnHsCk4WQKJcMsJMAAAAASUVORK5CYII=" InformativeScreenshot="b1dfead04663dc244678a674e74dfcbc.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Exibição de saldos da conta do Razão' /&gt;" SearchSteps="Selector, FuzzySelector, Image" SelectionStrategy="UIA" Version="V2" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                              <uix:Target DesignTimeRectangle="234, 99, 26, 26" FriendlyName="'Gravar como variante...'" FullSelectorArgument="&lt;uia automationid='122' cls='Button' name='Gravar como variante...' /&gt;" FuzzySelectorArgument="&lt;uia automationid='122' cls='Button' name='Gravar como variante...' role='botón' check:fulltext='Gravar como variante...' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACySURBVEhLY/g/QGDUYrqBUYvpBgavxeHd+/9zhCwgCRfOOQHVjRsQtBhkEAicuvUazkYHyHIgtlLaKjAbH8BrMbqBxFqMSx0yGLUYBaAbAmLjwrB4pYnFxIDhZzGIj46Rsw9NLEbmgwoWEMCnBh/AazEIgAxZcfgumA0zFNlwmlkMMwhkObKhNPcxCMAM615/CcNQbBZTXGQiA5gFxGCqVBK0AqMW0w2MWkw3MEAW//8PAPV7T74EnDUEAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, Image" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                  </Sequence>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-8, -8, 1382, 744" FilePath="C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplogon.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE8SURBVFhHYxgFo2AUjIJBAxxrVls61ay5T2dcC7Ue7AAnoMB/emHHmjWz7KtXMkGtp68DgJbPsCtfzQi1GgLo5QCg5dMcy1cgLH//5UcECG89fa+5dsnR/5Ti0nkH/ztWrcJuefWaKXYVq1B9/v7Lz//Uwk/ffP6f3LX2v335cmyWT7KqQPI5DGAziBwMsjy+ddl/m6IFQMtWo1s+wbZ4CablIIDNMFLxk9ef/se1LMVuec2aPrMStGBHBtgMJAWDLI8FWV6M1fIeqDW4AdCQxSB89f7LfWsPXfm/9uBlknBsCzDYsVlevboLagVxwKZovotd6ZL/diWLScL25cuwWL6mA2os8QBoCFXKAWCwt0GNJA1QqSBqhhpHOqDUAUCfN0KNIg8AHaAJNGg+mTgXaswoGAWjYBSQCBgYAMLf0dVJBbU9AAAAAElFTkSuQmCC" InformativeScreenshot="69934c9e99831de0699c5e74ca817ab2.png" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='SAP Easy Access  -  Menu usuário p/ RPA Controladoria' /&gt;" Title="SAP Easy Access  -  Menu usuário p/ RPA Controladoria" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="498,104" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Rethrow sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>
