@@ -1,0 +1,20 @@
+﻿03/08/2023 03:54:09 - Ingresando a SAP
+03/08/2023 03:55:04 - Fin de ingreso a SAP
+03/08/2023 03:59:02 - Ingresando a SAP
+03/08/2023 03:59:11 - Fin de ingreso a SAP
+03/08/2023 04:11:15 - Ingresando a SAP
+03/08/2023 04:11:23 - Fin de ingreso a SAP
+03/08/2023 04:17:46 - Ingresando a SAP
+03/08/2023 04:17:54 - Fin de ingreso a SAP
+03/08/2023 04:23:40 - Ingresando a SAP
+03/08/2023 04:23:48 - Fin de ingreso a SAP
+03/08/2023 04:29:06 - Ingresando a SAP
+03/08/2023 04:29:14 - Fin de ingreso a SAP
+03/08/2023 04:31:12 - Ingresando a SAP
+03/08/2023 04:31:21 - Fin de ingreso a SAP
+03/08/2023 04:35:13 - Ingresando a SAP
+03/08/2023 04:35:21 - Fin de ingreso a SAP
+03/08/2023 04:40:31 - Ingresando a SAP
+03/08/2023 04:40:39 - Fin de ingreso a SAP
+03/08/2023 04:50:20 - Ingresando a SAP
+03/08/2023 04:50:30 - Fin de ingreso a SAP

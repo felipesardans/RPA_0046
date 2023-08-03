@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>970,1719</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>654,1713</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SAPLogin_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="48">
@@ -95,7 +95,7 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SAPLogin" sap:VirtualizedContainerService.HintSize="550,1654" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SAPLogin" sap:VirtualizedContainerService.HintSize="480,1648" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_Username" />
       <Variable x:TypeArguments="ss:SecureString" Name="secure_Pass" />
@@ -105,30 +105,26 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CustomSequence\Log.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="488,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="CustomSequence\Log.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CustomSequence\Log.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="438,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="CustomSequence\Log.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_Message">
-          <Literal x:TypeArguments="x:String">Ingresando a SAP</Literal>
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_PathPAN">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Environment.CurrentDirectory" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Message">Ingresando a SAP</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_PathPAN">[Environment.CurrentDirectory]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="488,1238" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,1252" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="450,1010" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence sap:VirtualizedContainerService.HintSize="376,1025" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;SAPCredentials&quot;).ToString]" CacheStrategy="None" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[secure_Pass]" Username="[str_Username]" />
-          <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="388,133" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="saplogon.exe" />
-          <ucas:Logon Window="{x:Null}" ConnectionName="[in_Config(&quot;ConnectionName&quot;).ToString]" DelayBetweenRetries="3500" DisplayName="SAP Logon" sap:VirtualizedContainerService.HintSize="388,138" sap2010:WorkflowViewState.IdRef="Logon_1" Retries="10" SAPLogonPath="[in_Config(&quot;SAPLogonPath&quot;).ToString]" />
-          <ucas:Login Password="{x:Null}" Window="{x:Null}" Client="[in_Config(&quot;Client&quot;).ToString]" DisplayName="SAP Login 'saplogon.exe SAP'" sap:VirtualizedContainerService.HintSize="388,365" sap2010:WorkflowViewState.IdRef="Login_1" IsSecure="True" Language="[in_Config(&quot;Language&quot;).ToString]" MultiLogonOptionToChoose="Single" SecurePassword="[secure_Pass]" Timeout="5000" Username="[str_Username]">
+          <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;SAPCredentials&quot;).ToString]" CacheStrategy="None" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="334,180" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[secure_Pass]" Username="[str_Username]" />
+          <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="saplogon.exe" />
+          <ucas:Logon Window="{x:Null}" ConnectionName="[in_Config(&quot;ConnectionName&quot;).ToString]" DelayBetweenRetries="3500" DisplayName="SAP Logon" sap:VirtualizedContainerService.HintSize="334,137" sap2010:WorkflowViewState.IdRef="Logon_1" Retries="10" SAPLogonPath="[in_Config(&quot;SAPLogonPath&quot;).ToString]" />
+          <ucas:Login Password="{x:Null}" Window="{x:Null}" Client="[in_Config(&quot;Client&quot;).ToString]" DisplayName="SAP Login 'saplogon.exe SAP'" sap:VirtualizedContainerService.HintSize="334,364" sap2010:WorkflowViewState.IdRef="Login_1" IsSecure="True" Language="[in_Config(&quot;Language&quot;).ToString]" MultiLogonOptionToChoose="Single" SecurePassword="[secure_Pass]" Timeout="5000" Username="[str_Username]">
             <ucas:Login.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="22d7effa-b5b9-4846-bb17-c02403d31176" InformativeScreenshot="9cea53e9c5dab94c824afab968e4d986" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='SAP' /&gt;">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="22d7effa-b5b9-4846-bb17-c02403d31176" InformativeScreenshot="98d624e9cff81452cf1d891677895bea" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='SAP' /&gt;">
                 <ui:Target.TimeoutMS>
                   <InArgument x:TypeArguments="x:Int32" />
                 </ui:Target.TimeoutMS>
@@ -175,8 +171,12 @@
     </TryCatch>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CustomSequence\Log.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="438,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="CustomSequence\Log.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_Message">Fin de ingreso a SAP</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_PathPAN">[Environment.CurrentDirectory]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Message">
+          <Literal x:TypeArguments="x:String">Fin de ingreso a SAP</Literal>
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_PathPAN">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Environment.CurrentDirectory" />
+        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
   </Sequence>

@@ -1,0 +1,11 @@
+﻿02/08/2023 01:04:52 - Ingresando a SAP
+02/08/2023 02:35:12 - Ingresando a SAP
+02/08/2023 02:35:29 - Fin de ingreso a SAP
+02/08/2023 03:54:52 - Ingresando a SAP
+02/08/2023 03:55:01 - Fin de ingreso a SAP
+02/08/2023 03:59:36 - Ingresando a SAP
+02/08/2023 03:59:43 - Fin de ingreso a SAP
+02/08/2023 04:14:15 - Ingresando a SAP
+02/08/2023 04:14:23 - Fin de ingreso a SAP
+02/08/2023 04:15:29 - Ingresando a SAP
+02/08/2023 04:15:37 - Fin de ingreso a SAP

@@ -1,10 +1,10 @@
 {
   "name": "RPA_0046 SAP Variación Cambiaria",
-  "projectId": "88f0d51e-937c-40b7-a34f-7af422227529",
   "description": "Robotic Enterprise Framework",
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.21.0-preview]",
+    "UiPath.Mail.Activities": "[1.20.3]",
     "UiPath.System.Activities": "[23.6.0-preview]",
     "UiPath.Testing.Activities": "[23.6.0-preview]",
     "UiPath.UIAutomation.Activities": "[23.6.1-preview]"
@@ -21,7 +21,6 @@
     "isAttended": false,
     "requiresUserInteraction": true,
     "supportsPersistence": false,
-    "workflowSerialization": "DataContract",
     "excludedLoggedData": [
       "Private:*",
       "*password*"
@@ -29,8 +28,7 @@
     "executionType": "Workflow",
     "readyForPiP": false,
     "startsInPiP": false,
-    "mustRestoreAllDependencies": true,
-    "pipType": "ChildSession"
+    "mustRestoreAllDependencies": true
   },
   "designOptions": {
     "projectProfile": "Developement",
@@ -47,42 +45,36 @@
         "editingStatus": "InProgress",
         "testCaseId": "5cc79c2d-a37e-4c58-9a79-e1179a44f96b",
         "testCaseType": "TestCase",
-        "executionTemplateType": "Local",
         "fileName": "Tests\\GetTransactionDataTestCase.xaml"
       },
       {
         "editingStatus": "InProgress",
         "testCaseId": "4221f414-b592-4f7a-ad14-8a18e5b26fbc",
         "testCaseType": "TestCase",
-        "executionTemplateType": "Local",
         "fileName": "Tests\\InitAllApplicationsTestCase.xaml"
       },
       {
         "editingStatus": "InProgress",
         "testCaseId": "a0ac244e-7023-421f-92ae-f0618a626e9f",
         "testCaseType": "TestCase",
-        "executionTemplateType": "Local",
         "fileName": "Tests\\InitAllSettingsTestCase.xaml"
       },
       {
         "editingStatus": "InProgress",
         "testCaseId": "3dbfce61-ce22-45c3-aad6-f56b5e1552b3",
         "testCaseType": "TestCase",
-        "executionTemplateType": "Local",
         "fileName": "Tests\\MainTestCase.xaml"
       },
       {
         "editingStatus": "InProgress",
         "testCaseId": "76a14d78-2321-4268-b775-1bcfd8062a4c",
         "testCaseType": "TestCase",
-        "executionTemplateType": "Local",
         "fileName": "Tests\\ProcessTestCase.xaml"
       },
       {
         "editingStatus": "InProgress",
         "testCaseId": "0bcfeff4-1bce-42a1-91ab-039e18d10d9a",
         "testCaseType": "TestCase",
-        "executionTemplateType": "Local",
         "fileName": "Tests\\WorkflowTestCaseTemplate.xaml"
       }
     ],

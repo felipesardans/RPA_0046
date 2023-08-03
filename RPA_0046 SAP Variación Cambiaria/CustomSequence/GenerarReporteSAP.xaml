@@ -10,7 +10,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>654,2735</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>645,2991</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GenerarReporteSAP_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="74">
@@ -69,6 +69,8 @@
       <x:String>UiPath.Platform.Triggers</x:String>
       <x:String>UiPath.UIAutomationNext.Activities.Triggers</x:String>
       <x:String>UiPath.Platform.Triggers.Scope</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -139,7 +141,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="GenerarReporteSAP" sap:VirtualizedContainerService.HintSize="574,2670" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GenerarReporteSAP" sap:VirtualizedContainerService.HintSize="574,2926" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="bool_FileExiste" />
       <Variable x:TypeArguments="x:Boolean" Name="bool_Seguridad" />
@@ -149,9 +151,9 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="532,2578" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="532,2834" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="494,2164" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence sap:VirtualizedContainerService.HintSize="494,2420" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -170,19 +172,19 @@
               </ui:Target>
             </ucas:CallTransaction.Target>
           </ucas:CallTransaction>
-          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: SAP Easy Access  -  Menu usuário p/ RPA Controladoria" sap:VirtualizedContainerService.HintSize="452,1873" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="cb6b17b1-723c-47e7-a369-fdd93588f3e5" Version="V2">
+          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: SAP Easy Access  -  Menu usuário p/ RPA Controladoria" sap:VirtualizedContainerService.HintSize="452,2129" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="cb6b17b1-723c-47e7-a369-fdd93588f3e5" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence sap:VirtualizedContainerService.HintSize="418,1583" sap2010:WorkflowViewState.IdRef="Sequence_125">
+                <Sequence sap:VirtualizedContainerService.HintSize="418,1839" sap2010:WorkflowViewState.IdRef="Sequence_125">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,1490" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,1746" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="str_Descripcion" />
                       <Variable x:TypeArguments="x:String" Name="str_Selector" />
@@ -214,7 +216,7 @@
                       <uix:NClick.Target>
                         <uix:TargetAnchorable CvTextArgument="W" CvType="Text" DesignTimeRectangle="492, 485, 24, 24" DesignTimeScaleFactor="1" FriendlyName="'Eliminar completamente'" FullSelectorArgument="&lt;uia automationid='127' cls='Button' name='Eliminar completamente seleção' /&gt;" FuzzySelectorArgument="&lt;uia automationid='127' cls='Button' name='Eliminar completamente seleção' role='botón' check:fulltext='Eliminar completamente seleção' /&gt;" Guid="59611cdd-2680-4724-b951-33b84511451d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADnSURBVEhL7ZI9CgJBDIUtPYf38BaCN7C39Ax7BQtLsbHZ3sJGLC0FT+AhRt5g4I0/eVkYVGQ/CCyz2XyTbAbpw/TC6vTCgvX+koaTVRHH8/X+NoYrHM02TwIV+Mbjt0b6lQ5RIPKfkKNkQArHizYviwI5yFVI4bTZ5WJcEGfz5SE/24UQOFeEhM32VIyMhTZy5FQRojAXByzEogDO85BCvrkVNyE64zPkKjoJbXws5K6rCHlZbEFM+OqdQgq5i0chOjKhda/oJATvilYTAlsMj0gOCAlxexT0gqfgERLWpBdW59+FKd0A3/x+PzYwxpIAAAAASUVORK5CYII=" InformativeScreenshot="eedf0034fcf6d35958d5c62adbb2be7b.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Seleção múltipla para Nº conta' idx='*' /&gt;" SearchSteps="Selector, FuzzySelector, Image, CV" SelectionStrategy="UIA" Version="V2" Visibility="Interactive">
                           <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                               <uix:Target CvElementArea="526, 487, 20, 21" CvTextArea="530, 490, 10, 12" CvTextArgument="i" CvType="Icon" DesignTimeRectangle="524, 485, 24, 24" FriendlyName="'Ajuda para tela'" FullSelectorArgument="&lt;uia automationid='129' cls='Button' name='Ajuda para tela' /&gt;" FuzzySelectorArgument="&lt;uia automationid='129' cls='Button' name='Ajuda para tela' role='botón' check:fulltext='Ajuda para tela' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACDSURBVEhLY/hPZzBqIdXBqIVUB3gttK3c8p8jZAHJ+NSt11ATMAFeC5XSVv1fcfgulEccIKSHLAvDu/eDfYIN0MRCkDjIQlxyVLcQHxj6FiKnXGwG08SHIPFRC3GBwW8hzDIYxiZPVQsJAYoshBVhpGJ8AK+FtACjFlIdjFpIZfD/PwAVZphAkmdGVQAAAABJRU5ErkJggg==" SearchSteps="Selector, FuzzySelector, Image, CV" />
                             </scg:List>
                           </uix:TargetAnchorable.Anchors>
@@ -225,7 +227,7 @@
                       <uix:NClick.Target>
                         <uix:TargetAnchorable DesignTimeRectangle="719, 485, 24, 24" DesignTimeScaleFactor="1" FriendlyName="'Upload do clipboard'" FullSelectorArgument="&lt;uia automationid='135' cls='Button' name='Upload do clipboard' /&gt;" FuzzySelectorArgument="&lt;uia automationid='135' cls='Button' name='Upload do clipboard' role='botón' check:fulltext='Upload do clipboard' /&gt;" Guid="7b59a967-d078-4bf1-961c-4836153f09c3" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACjSURBVEhLY/hPZzBqIdXBqIUoYMXhu/85QhaAcff6S1BR0gDRFoZ37wdbdOrWazAfxLat3AJmkwLwWqiUtgruI2TLYABZDoSJAXgtRLYE5kNkjOxDZLX4ANEWUgsMfgvR4xUbxgdIthDdcGwYX6iMWojTQmwlDXrhgA0MbR+CCoLhYyE+TLaFMBcjG4Quho5BBQM+gNdCWoBRC6kOhruF//8DACzQSlJefRZjAAAAAElFTkSuQmCC" InformativeScreenshot="f3e2b57ac66d88cab2b74c3d3c2ec0cb.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Seleção múltipla para Nº conta' idx='*' /&gt;" SearchSteps="Selector, FuzzySelector, Image" SelectionStrategy="UIA" Version="V2" Visibility="Interactive">
                           <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                               <uix:Target CvType="CloseButton" DesignTimeRectangle="751, 485, 24, 24" FriendlyName="'Cancelar'" FullSelectorArgument="&lt;uia automationid='123' cls='Button' name='Cancelar' /&gt;" FuzzySelectorArgument="&lt;uia automationid='123' cls='Button' name='Cancelar' role='botón' check:fulltext='Cancelar' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC+SURBVEhL7dS7DYMwFIVhb8ImTMIiLMIgtJRp0yClS0lHmwFMDrIjy8L34VxR+ZdcBF34eFhx/uYaaF4DzSPBz7r6xblzcT267pzb5zkcuY680nscfyCFRgzrNQzh6HXsrW/TRKIphhvk4t/VtxKqxZAIRDlagyExiHJUiyEViNInw9KmOiPHalDxdP7NuN1bSjRZ2iA1KDvF7UYtSk4AoLBYiv79T4MLUFgM6LPvw69yshdvWAPNa6B5N4PeHw4YihXH6M/MAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, Image, CV" />
                             </scg:List>
                           </uix:TargetAnchorable.Anchors>
@@ -236,23 +238,28 @@
                       <uix:NClick.Target>
                         <uix:TargetAnchorable CvType="Icon" DesignTimeRectangle="332, 485, 24, 24" DesignTimeScaleFactor="1" FriendlyName="'Transferir'" FullSelectorArgument="&lt;uia automationid='119' cls='Button' name='Transferir' /&gt;" FuzzySelectorArgument="&lt;uia automationid='119' cls='Button' name='Transferir' role='botón' check:fulltext='Transferir' /&gt;" Guid="3beca73e-9fbe-48db-a987-c2b76a52ff6b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD0SURBVEhL7ZS7DcIwEEApmYM92AKJDegpmSErUFAiGpr0FDSIkhKJCRjC6KGccCLf+awECpQnuUis+N3PmYQfMwoHZxS2WFanMF3sWmu+qZtdHy5hdby9D19vL82bD7JHMB6yQiSz1aF50iFTT7amcH9+uGQCwlQVYkwhMqQx1/vTzITyWqhCRKmDc1nTSytLVchHqQ9Ly9xFFRIpE9jla0LKqQnlDsar97XQStqX4qHJkQtSFULqWlhIua1ATSE9LBmQnAxMITAMmpTDkcjkeoLLCoG+cHCqPwTEHsuDSyhIRvzeYnjv7XWRcAhG4eD8uzCEF5Q4wdoPT+6JAAAAAElFTkSuQmCC" InformativeScreenshot="8200e54198ead30f0ab65ca87cf8aded.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Seleção múltipla para Nº conta' idx='*' /&gt;" SearchSteps="Selector, FuzzySelector, Image, CV" SelectionStrategy="UIA" Version="V2" Visibility="Interactive">
                           <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                               <uix:Target CvType="Icon" DesignTimeRectangle="364, 485, 24, 24" FriendlyName="'Verificar entradas'" FullSelectorArgument="&lt;uia automationid='111' cls='Button' name='Verificar entradas' /&gt;" FuzzySelectorArgument="&lt;uia automationid='111' cls='Button' name='Verificar entradas' role='botón' check:fulltext='Verificar entradas' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADLSURBVEhLY/hPZzBqIdXBqIVUB1SzsP/w0v8CdXb/V1/cDRXBDqhi4enHV8GWgbDLrAyoKHZAFQs1e4LgFhICFFtYtnUC3DJCwQkCFFkIsgBmWezyGqgofkDQQnwuh1kGClJiAV4LQQkAZii6pSAf4ZLDBwj6EDlBwAyGZQEQBsUhKYCoOIQZDrMAxiYlKGGAKAuR8xkyBomTCoiyEATQLSU1KGGAaAtBAJYNCJUm+ABJFoIAOcGIDEi2kFIwaiHVwaiFVAd0tvD/fwD2ospHAK4QeAAAAABJRU5ErkJggg==" SearchSteps="Selector, FuzzySelector, Image, CV" />
                             </scg:List>
                           </uix:TargetAnchorable.Anchors>
                         </uix:TargetAnchorable>
                       </uix:NClick.Target>
                     </uix:NClick>
-                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'saplogon.exe Exibição'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,217" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="cb6b17b1-723c-47e7-a369-fdd93588f3e5" Text="[DateTime.Now.Year.ToString]" Version="V3">
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into '1000'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,217" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="cb6b17b1-723c-47e7-a369-fdd93588f3e5" Text="1000" Version="V3">
                       <uix:NTypeInto.Target>
-                        <uix:TargetAnchorable DesignTimeRectangle="283, 200, 57, 33" DesignTimeScaleFactor="1" FriendlyName="'saplogon.exe Exibição'" Guid="35545de5-e89c-4ed0-935d-769a3e9c115d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADkAAAAhCAYAAABjnQNzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC8SURBVFhH7dlBCsIwEEbhZucBvZRLt648hujBsozMIiDDsxFTmmn7D3wgEtt5dGennHOZc7neSsSxvWhfMj2erzLHLhYVBZHmk9wDjEwpITq7NtrL0NnqayR9H1V35Ol8D4v2JT9FRhxFOseN/LSFyBZFGkUOHEU6ijSKHDiKdBRpFDlwFOko0ihy4HRH6p+BIKNIB18T2I/qZ7tYVDWi+0luwd+RhM6ujfYydLbCyL1pRtIrs6XQ/ZaXyxsgWii4SLuqzwAAAABJRU5ErkJggg==" InformativeScreenshot="143af01eea56be13ca29452813bf8569.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Exibição de saldos da conta do Razão' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V2" Visibility="Interactive" />
+                        <uix:TargetAnchorable DesignTimeRectangle="291, 178, 39, 24" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'1000'" FullSelectorArgument="&lt;sap id='usr/ctxtRBUKRS-LOW' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ctxtRBUKRS-LOW' /&gt;" Guid="0fb5aa46-2dd1-46b4-ab9a-02c0f80168e3" InformativeScreenshot="42419a537c1d12df35ac77c481f66191.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Exibição de saldos da conta do Razão' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'TextField Exercício'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,217" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="cb6b17b1-723c-47e7-a369-fdd93588f3e5" Text="[DateTime.Now.Year.ToString]" Version="V3">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="291, 205, 39, 24" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'TextField Exercício'" FullSelectorArgument="&lt;sap id='usr/txtRYEAR' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/txtRYEAR' /&gt;" Guid="98021ad4-ab3a-48d3-9e34-fe370368738e" InformativeScreenshot="e7ac5e55ccc62e4b6dfdbc7bcdaade46.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Exibição de saldos da conta do Razão' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                       </uix:NTypeInto.Target>
                     </uix:NTypeInto>
                     <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Gravar como variante...'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cb6b17b1-723c-47e7-a369-fdd93588f3e5" Version="V3">
                       <uix:NClick.Target>
                         <uix:TargetAnchorable DesignTimeRectangle="272, 99, 26, 26" DesignTimeScaleFactor="1" FriendlyName="'Executar'" FullSelectorArgument="&lt;uia automationid='119' cls='Button' name='Executar' /&gt;" FuzzySelectorArgument="&lt;uia automationid='119' cls='Button' name='Executar' role='botón' check:fulltext='Executar' /&gt;" Guid="6bee7e8f-8582-4cbf-bd03-3ac1bb5ccd29" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD2SURBVEhL7ZS7DcIwEEApmYM92AKJDegpmSErUFAiGhp6ChpESYnEBAxh9FBOmMj2nZExjZ/kIraSdz9n5P5EE1ejiauRLZ53RzeebT7WdHXoT+2Yxd3++pIs1+d+542cEZQVkxjZZLHrn+KQuTV7Vbw93U1SAXGoKkNUMVLkPpfbI5kZZddIihGGBFoV6LWWdVLMy6EP5JY/RFJM5EzskJ+LKXNMLHfYX8WuU6zUJfhquDQswSbFELpOKaQNWsCqmB7nDJJFCqoYGJqYHAkymXRrkCYx0DcEof4RGGcsK2axIBny2/RhP2cWssWlaOJqNHElnHsCk4WQKJcMsJMAAAAASUVORK5CYII=" InformativeScreenshot="b1dfead04663dc244678a674e74dfcbc.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Exibição de saldos da conta do Razão' /&gt;" SearchSteps="Selector, FuzzySelector, Image" SelectionStrategy="UIA" Version="V2" Visibility="Interactive">
                           <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                               <uix:Target DesignTimeRectangle="234, 99, 26, 26" FriendlyName="'Gravar como variante...'" FullSelectorArgument="&lt;uia automationid='122' cls='Button' name='Gravar como variante...' /&gt;" FuzzySelectorArgument="&lt;uia automationid='122' cls='Button' name='Gravar como variante...' role='botón' check:fulltext='Gravar como variante...' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACySURBVEhLY/g/QGDUYrqBUYvpBgavxeHd+/9zhCwgCRfOOQHVjRsQtBhkEAicuvUazkYHyHIgtlLaKjAbH8BrMbqBxFqMSx0yGLUYBaAbAmLjwrB4pYnFxIDhZzGIj46Rsw9NLEbmgwoWEMCnBh/AazEIgAxZcfgumA0zFNlwmlkMMwhkObKhNPcxCMAM615/CcNQbBZTXGQiA5gFxGCqVBK0AqMW0w2MWkw3MEAW//8PAPV7T74EnDUEAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, Image" />
                             </scg:List>
                           </uix:TargetAnchorable.Anchors>
